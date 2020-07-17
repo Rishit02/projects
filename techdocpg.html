@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Swift Programming</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles1.css">
+  </head>
+  <body>
+    <div class="row flex-xl-nowrap">
+      <nav role="navigation" class="nav flex-column bg-light" id="navbar">
+        <img src="swift.png" alt="Swift logo" width="75%" height="auto"> <br>
+        <header class="text-dark">
+          THE SWIFT <br>
+          PROGRAMMING LANGUAGE <br>
+        </header>
+        <span class="text-secondary">SWIFT 5.3</span>
+        <hr>
+        <span class="text-secondary">LANGUAGE GUIDE</span>
+        <a class="nav-link" href="#The_Basics">The Basics</a>
+        <a class="nav-link" href="#Constants_and_Variables">Constants and Variables</a>
+        <a class="nav-link" href="#Comments">Comments</a>
+        <a class="nav-link" href="#Semicolons">Semicolons</a>
+        <a class="nav-link" href="#Integers">Integers</a>
+        <a class="nav-link" href="#Floating-Point_Numbers">Floating-Point Numbers</a>
+      </nav>
+    <div class="container">
+      <main id="main-doc" class="bg-white">
+      <section class="main-section" id="The_Basics">
+        <header><h1>The Basics</h1></header>
+        <p>
+          Swift is a new programming language for iOS, macOS, watchOS, and tvOS app development. Nonetheless, many parts of Swift will be familiar from your experience of developing in C and Objective-C.
+<br> <br>
+          Swift provides its own versions of all fundamental C and Objective-C types, including Int for integers, Double and Float for floating-point values, Bool for Boolean values, and String for textual data. Swift also provides powerful versions of the three primary collection types, Array, Set, and Dictionary, as described in Collection Types.
+<br> <br>
+          Like C, Swift uses variables to store and refer to values by an identifying name. Swift also makes extensive use of variables whose values can’t be changed. These are known as constants, and are much more powerful than constants in C. Constants are used throughout Swift to make code safer and clearer in intent when you work with values that don’t need to change.
+<br> <br>
+          In addition to familiar types, Swift introduces advanced types not found in Objective-C, such as tuples. Tuples enable you to create and pass around groupings of values. You can use a tuple to return multiple values from a function as a single compound value.
+<br> <br>
+          Swift also introduces optional types, which handle the absence of a value. Optionals say either “there is a value, and it equals x” or “there isn’t a value at all”. Using optionals is similar to using nil with pointers in Objective-C, but they work for any type, not just classes. Not only are optionals safer and more expressive than nil pointers in Objective-C, they’re at the heart of many of Swift’s most powerful features.
+<br> <br>
+          Swift is a type-safe language, which means the language helps you to be clear about the types of values your code can work with. If part of your code requires a String, type safety prevents you from passing it an Int by mistake. Likewise, type safety prevents you from accidentally passing an optional String to a piece of code that requires a non-optional String. Type safety helps you catch and fix errors as early as possible in the development process.
+    </p>
+      </section>
+      <section class="main-section" id="Constants_and_Variables">
+        <header><h1>Constants and Variables</h1></header>
+        <p>Constants and variables associate a name (such as maximumNumberOfLoginAttempts or welcomeMessage) with a value of a particular type (such as the number 10 or the string "Hello"). The value of a constant can’t be changed once it’s set, whereas a variable can be set to a different value in the future.</p>
+        <p><h2>Declaring Constants and Variables</h2>
+Constants and variables must be declared before they’re used. You declare constants with the let keyword and variables with the var keyword. Here’s an example of how constants and variables can be used to track the number of login attempts a user has made</p>
+        <code>
+        let maximumNumberOfLoginAttempts = 10<br>
+        var currentLoginAttempt = 0
+        </code>
+        <p>This code can be read as:
+        “Declare a new constant called maximumNumberOfLoginAttempts, and give it a value of 10. Then, declare a new variable called currentLoginAttempt, and give it an initial value of 0.”
+<br> <br>
+        In this example, the maximum number of allowed login attempts is declared as a constant, because the maximum value never changes. The current login attempt counter is declared as a variable, because this value must be incremented after each failed login attempt.
+<br> <br>
+        You can declare multiple constants or multiple variables on a single line, separated by commas:</p>
+  <code>var x = 0.0, y = 0.0, z = 0.0</code>
+      </section>
+      <section class="main-section" id="Comments">
+        <header><h1>Comments</h1></header>
+        <p>
+          Use comments to include nonexecutable text in your code, as a note or reminder to yourself. Comments are ignored by the Swift compiler when your code is compiled.
+          Comments in Swift are very similar to comments in C. Single-line comments begin with two forward-slashes (//):
+        </p>
+        <code>// This is a comment.</code>
+        <p>Multiline comments start with a forward-slash followed by an asterisk (/*) and end with an asterisk followed by a forward-slash (*/):</p>
+        <code>/* This is also a comment <br>
+but is written over multiple lines. */</code>
+        <p>
+          Unlike multiline comments in C, multiline comments in Swift can be nested inside other multiline comments. You write nested comments by starting a multiline comment block and then starting a second multiline comment within the first block. The second block is then closed, followed by the first block:
+        </p>
+        <code>/* This is the start of the first multiline comment. <br>
+ /* This is the second, nested multiline comment. */ <br>
+This is the end of the first multiline comment. */</code>
+        <p>Nested multiline comments enable you to comment out large blocks of code quickly and easily, even if the code already contains multiline comments.</p>
+        </section>
+      <section class="main-section" id="Semicolons">
+        <header><h1>Semicolons</h1></header>
+        <p>
+          Unlike many other languages, Swift doesn’t require you to write a semicolon (;) after each statement in your code, although you can do so if you wish. However, semicolons are required if you want to write multiple separate statements on a single line:
+        </p>
+        <code>
+          let cat = "🐱"; print(cat)
+<br>
+          // Prints "🐱"
+        </code>
+      </section>
+      <section class="main-section" id="Integers">
+        <header><h1>Integers</h1></header>
+        <p>
+          Integers are whole numbers with no fractional component, such as 42 and -23. Integers are either signed (positive, zero, or negative) or unsigned (positive or zero).
+<br> <br>
+          Swift provides signed and unsigned integers in 8, 16, 32, and 64 bit forms. These integers follow a naming convention similar to C, in that an 8-bit unsigned integer is of type UInt8, and a 32-bit signed integer is of type Int32. Like all types in Swift, these integer types have capitalized names.
+      </p>
+      <h2>Integer Bounds</h2>
+      <p>
+        You can access the minimum and maximum values of each integer type with its min and max properties:
+      </p>
+      <code>
+        let minValue = UInt8.min  // minValue is equal to 0, and is of type UInt8
+<br> <br>
+        let maxValue = UInt8.max  // maxValue is equal to 255, and is of type UInt8
+      </code>
+      <h2>Int</h2>
+      <p>
+        In most cases, you don’t need to pick a specific size of integer to use in your code. Swift provides an additional integer type, Int, which has the same size as the current platform’s native word size:
+      </p>
+      <ul>
+        <li>On a 32-bit platform, Int is the same size as Int32.</li>
+        <li>On a 64-bit platform, Int is the same size as Int64.</li>
+      </ul>
+      <p>
+        Unless you need to work with a specific size of integer, always use Int for integer values in your code. This aids code consistency and interoperability. Even on 32-bit platforms, Int can store any value between -2,147,483,648 and 2,147,483,647, and is large enough for many integer ranges.
+      </p> <br>
+      <h2>UInt</h2>
+      <p>
+        Swift also provides an unsigned integer type, UInt, which has the same size as the current platform’s native word size:
+      </p>
+      <ul>
+        <li>On a 32-bit platform, UInt is the same size as UInt32.</li>
+        <li>On a 64-bit platform, UInt is the same size as UInt64.</li>
+      </ul>
+      </section>
+    <section class="main-section" id="Floating-Point_Numbers">
+      <header>
+        <h1>Floating-Point Numbers</h1>
+      </header>
+      <p>
+        Floating-point numbers are numbers with a fractional component, such as 3.14159, 0.1, and -273.15.
+<br> <br>
+        Floating-point types can represent a much wider range of values than integer types, and can store numbers that are much larger or smaller than can be stored in an Int. Swift provides two signed floating-point number types:
+      </p>
+      <ul>
+        <li><code>Double </code>represents a 64-bit floating-point number.</li>
+        <li><code>Float </code>represents a 32-bit floating-point number.</li>
+      </ul>
+    </section>
+    </main>
+    </div>
+    </div>
+  </body>
+</html>
